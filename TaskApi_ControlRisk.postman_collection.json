@@ -1,0 +1,130 @@
+{
+	"info": {
+		"_postman_id": "c2a8f3fe-7da2-4e56-bd21-7d3544f8228e",
+		"name": "TaskApi_ControlRisk",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "14527758"
+	},
+	"item": [
+		{
+			"name": "POST_create a task",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"title\": \"Primera tarea\",\r\n  \"description\": \"Backend en Azure Functions\",\r\n  \"dueDate\": \"2025-09-30\",\r\n  \"status\": \"Pending\",\r\n  \"createdBy\": \"Pulixe\",\r\n  \"assignedTo\": \"Tester\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:7071/api/tasks",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "7071",
+					"path": [
+						"api",
+						"tasks"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET_Read All task",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:7071/api/tasks\n",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "7071",
+					"path": [
+						"api",
+						"tasks\n"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET_Read a task by Id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:7071/api/tasks/b81371dc-9d39-4333-ace4-fd29af97fe6b",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "7071",
+					"path": [
+						"api",
+						"tasks",
+						"b81371dc-9d39-4333-ace4-fd29af97fe6b"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PUT_update task by Id",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:7071/api/tasks/b81371dc-9d39-4333-ace4-fd29af97fe6b",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "7071",
+					"path": [
+						"api",
+						"tasks",
+						"b81371dc-9d39-4333-ace4-fd29af97fe6b"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE_a task by Id",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:7071/api/tasks/b81371dc-9d39-4333-ace4-fd29af97fe6b",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "7071",
+					"path": [
+						"api",
+						"tasks",
+						"b81371dc-9d39-4333-ace4-fd29af97fe6b"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Auth URL",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		}
+	]
+}
