@@ -1,16 +1,4 @@
 # Task Manager -- Technical Test
-
-## 📸 Screenshots
-
-Screenshots of the running project are available in the `/imgs/`
-folder.\
-Example usage (replace with actual names):
-
-
-![](./imgs/screenshot1.png)
-![](./screenshot2.png)
-
-
 ------------------------------------------------------------------------
 
 ## 🚀 How to Run Locally
@@ -21,7 +9,7 @@ Located in `/client/` -- built with **Next.js v15**, **Redux Toolkit**,
 and **TailwindCSS**.
 
 ``` bash
-cd client
+cd client/frontend/task-test
 npm install
 npm run dev
 ```
@@ -34,11 +22,11 @@ v4**.
 Steps:
 
 ``` bash
-cd api
-dotnet build   # optional: ensures dependencies are restored
-func start     # starts Azure Functions locally
+cd api/src/TaskApi.Functions
+dotnet build   
+func start     
 ```
-
+if a .sln file created deleted and run again. 
 #### ⚙️ Configuration
 
 Edit `local.settings.json` if you want to use your own credentials:
@@ -63,7 +51,7 @@ Located in `/sql/`.
 -   Create a new SQL Server database.
 -   Apply the schema provided (diagram available in `/sql/`).
 -   Alternatively, rely on ORM auto-migration when running the API.
-
+![DB Schema](./sql/databaseSchema.png)
 ------------------------------------------------------------------------
 
 ## 🔑 Authentication Setup (Microsoft Identity)
@@ -115,5 +103,30 @@ and visualize long-term trends.\
 Gitflow practices.
 
 ------------------------------------------------------------------------
+## 📸 Screenshots
+
+## Tasks Page
+![Tasks Page](./imgs/screenshot3.png)
+
+## Tasks Form
+![Tasks Form](./imgs/screenshot4.png)
 
 
+
+
+![OAuth2.0](./imgs/screenshot1.png)
+![Login Page](./imgs/screenshot2.png)
+
+## ✅ Evaluation Criteria
+
+| Area            | Criteria                                                       | Status 
+|-----------------|----------------------------------------------------------------|-------- 
+| **Architecture** | Clean separation of concerns, SOLID principles                | - [✅]  
+| **Backend**      | Proper use of Azure Functions, C#, DI, async/await, security  | - [✅]  
+| **Database**     | T-SQL best practices, indexes, stored procedures              | - [ ]   
+| **Frontend**     | React hooks, clean components, form validation, responsive UI | - [✅]  
+| **Authentication** | OAuth2/OpenID integration, JWT token handling               | - [✅]  
+| **Unit Testing**  | Coverage and test structure using xUnit + Moq                | - [ ]  
+| **Documentation** | Clear, professional README with architecture notes           | - [✅]  
+| **Code Quality**  | Naming conventions, comments, modularity, error handling     | - [✅]  
+| **Bonus (Optional)** | Use of Azure Search, API Manager, Redis, Power BI, etc.   | - [ ]  
