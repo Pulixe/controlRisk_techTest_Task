@@ -8,7 +8,7 @@ Example usage (replace with actual names):
 
 ``` markdown
 ![Login Page](./imgs/screenshot1.png)
-![Task Dashboard](./imgs/screenshot2.png)
+![Task Dashboard](./screenshot2.png)
 ```
 
 ------------------------------------------------------------------------
