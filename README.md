@@ -6,10 +6,10 @@ Screenshots of the running project are available in the `/imgs/`
 folder.\
 Example usage (replace with actual names):
 
-``` markdown
+
 ![](./imgs/screenshot1.png)
 ![](./screenshot2.png)
-```
+
 
 ------------------------------------------------------------------------
 
