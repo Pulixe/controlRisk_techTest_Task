@@ -7,8 +7,8 @@ folder.\
 Example usage (replace with actual names):
 
 ``` markdown
-![Login Page](./imgs/screenshot1.png)
-![Task Dashboard](./screenshot2.png)
+![](./imgs/screenshot1.png)
+![](./screenshot2.png)
 ```
 
 ------------------------------------------------------------------------
