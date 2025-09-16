@@ -5,12 +5,15 @@
     "FUNCTIONS_WORKER_RUNTIME": "dotnet-isolated",
 
     // 🔑 SQL Connection String
-    "SqlConnection": "Server=localhost,1433;Database=TaskManagerDB;User Id=sa;Password=YourStrong!Passw0rd;Encrypt=False;",
-
-    // 🔑 OIDC / Microsoft Identity Platform
-    "OIDC:Authority": "https://login.microsoftonline.com/<YOUR_TENANT_ID>/v2.0",
-    "OIDC:ClientId": "<YOUR_CLIENT_ID>",
-    "OIDC:Audience": "<YOUR_CLIENT_ID>", 
-    "OIDC:TenantId": "<YOUR_TENANT_ID>"
+    "SqlServer__ConnectionString": "Server=localhost;Database=tasksdb;Trusted_Connection=True;TrustServerCertificate=True;",
+    "Oidc:Authority": "https://login.microsoftonline.com/de5d2c83-a780-4d24-b068-5fa18ac5ba71/v2.0",
+    "Oidc:Audience": "c3c831a3-7c6a-4ced-9bfd-3bc318496cee",
+    "Oidc__Authority": "https://login.microsoftonline.com/de5d2c83-a780-4d24-b068-5fa18ac5ba71/v2.0",
+    "Oidc__Audience": "c3c831a3-7c6a-4ced-9bfd-3bc318496cee",
+    "Debug:LogJwt": "true"
+  },
+  "Host": {
+    "CORS": "http://localhost:3000",
+    "CORSCredentials": true
   }
 }
