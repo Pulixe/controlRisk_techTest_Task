@@ -1,0 +1,7 @@
+C:\Users\Pulixe\Desktop\Control Risk\controlRisk_techTest_Task\api\src\TestTaskApi\bin\Debug\net9.0\CoverletSourceRootsMapping_TestTaskApi
+C:\Users\Pulixe\Desktop\Control Risk\controlRisk_techTest_Task\api\src\TestTaskApi\obj\Debug\net9.0\TestTaskApi.csproj.AssemblyReference.cache
+C:\Users\Pulixe\Desktop\Control Risk\controlRisk_techTest_Task\api\src\TestTaskApi\obj\Debug\net9.0\TestTaskApi.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Pulixe\Desktop\Control Risk\controlRisk_techTest_Task\api\src\TestTaskApi\obj\Debug\net9.0\TestTaskApi.AssemblyInfoInputs.cache
+C:\Users\Pulixe\Desktop\Control Risk\controlRisk_techTest_Task\api\src\TestTaskApi\obj\Debug\net9.0\TestTaskApi.AssemblyInfo.cs
+C:\Users\Pulixe\Desktop\Control Risk\controlRisk_techTest_Task\api\src\TestTaskApi\obj\Debug\net9.0\TestTaskApi.csproj.CoreCompileInputs.cache
+C:\Users\Pulixe\Desktop\Control Risk\controlRisk_techTest_Task\api\src\TestTaskApi\obj\Debug\net9.0\TestTaskApi.sourcelink.json
