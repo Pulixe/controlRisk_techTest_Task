@@ -6,7 +6,7 @@
 
 ```powershell
 # Navegar a la carpeta del proyecto de pruebas
-cd "c:\Users\Pulixe\Desktop\Control Risk\controlRisk_techTest_Task\api\src\TestTaskApi"
+cd "c:\Users\usuario\Desktop\path\controlRisk_techTest_Task\api\src\TestTaskApi"
 
 # Ejecutar todas las pruebas
 dotnet test

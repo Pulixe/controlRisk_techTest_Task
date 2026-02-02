@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test';
 
-test.describe('Task Management - Delete Flow', () => {
+test.describe('Flujo para eliminar una tarea', () => {
     test('should delete a task successfully', async ({ page }) => {
         // Navegar a la página de tareas
         await page.goto('/tasks');

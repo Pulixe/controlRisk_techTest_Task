@@ -1,18 +1,14 @@
 # Guía de Pruebas Unitarias y E2E - Proyecto Next.js TaskTest Control Risk
 
-## 📋 Índice
-1. [Introducción](#introducción)
-2. [Configuración del Entorno de Pruebas](#configuración-del-entorno-de-pruebas)
-3. [Pruebas Unitarias](#pruebas-unitarias)
-4. [Pruebas E2E](#pruebas-e2e)
-5. [Cómo Ejecutar las Pruebas](#cómo-ejecutar-las-pruebas)
-6. [Mejores Prácticas](#mejores-prácticas)
 
----
 
 ## Introducción
 
 Este proyecto incluye **6 pruebas unitarias** y **2 pruebas end-to-end (e2e)** que cubren los componentes y flujos más importantes de la aplicación de gestión de tareas.
+
+### NOTA
+ me apoye en AI para definir que pruebas unitarias serian las mas relevantes para el proyecto.
+ 
 
 ### ¿Qué son las pruebas unitarias?
 Las **pruebas unitarias** son pruebas que validan el funcionamiento de componentes individuales de forma aislada. Verifican que cada pieza de código funcione correctamente por sí sola.
@@ -20,7 +16,7 @@ Las **pruebas unitarias** son pruebas que validan el funcionamiento de component
 ### ¿Qué son las pruebas E2E?
 Las **pruebas end-to-end** simulan el comportamiento real de un usuario en la aplicación completa, navegando por múltiples páginas y realizando acciones completas.
 
----
+
 
 ## Configuración del Entorno de Pruebas
 
@@ -38,8 +34,6 @@ Las **pruebas end-to-end** simulan el comportamiento real de un usuario en la ap
 3. **Playwright** - Framework para pruebas E2E
    - `@playwright/test`: Motor de pruebas E2E
    - `playwright`: Navegador automatizado
-
-
 
 
 ## Cómo Ejecutar las Pruebas

@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test';
 
-test.describe('Task Management - Create and Edit Flow', () => {
+test.describe('flujo para crear o editar una tarea', () => {
     test('should create a new task and then edit it', async ({ page }) => {
         // Navegar a la página de tareas
         await page.goto('/tasks');
