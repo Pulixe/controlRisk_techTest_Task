@@ -117,16 +117,4 @@ Gitflow practices.
 ![OAuth2.0](./imgs/screenshot1.png)
 ![Login Page](./imgs/screenshot2.png)
 
-## ✅ Evaluation Criteria
 
-| Area            | Criteria                                                       | Status 
-|-----------------|----------------------------------------------------------------|-------- 
-| **Architecture** | Clean separation of concerns, SOLID principles                | - [✅]  
-| **Backend**      | Proper use of Azure Functions, C#, DI, async/await, security  | - [✅]  
-| **Database**     | T-SQL best practices, indexes, stored procedures              | - [ ]   
-| **Frontend**     | React hooks, clean components, form validation, responsive UI | - [✅]  
-| **Authentication** | OAuth2/OpenID integration, JWT token handling               | - [✅]  
-| **Unit Testing**  | Coverage and test structure using xUnit + Moq                | - [ ]  
-| **Documentation** | Clear, professional README with architecture notes           | - [✅]  
-| **Code Quality**  | Naming conventions, comments, modularity, error handling     | - [✅]  
-| **Bonus (Optional)** | Use of Azure Search, API Manager, Redis, Power BI, etc.   | - [ ]  
