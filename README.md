@@ -112,8 +112,6 @@ Gitflow practices.
 ![Tasks Form](./imgs/screenshot4.png)
 
 
-
-
 ![OAuth2.0](./imgs/screenshot1.png)
 ![Login Page](./imgs/screenshot2.png)
 
