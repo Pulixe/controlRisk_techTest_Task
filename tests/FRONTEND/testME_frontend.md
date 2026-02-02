@@ -6,6 +6,10 @@
 
 Este proyecto incluye **6 pruebas unitarias** y **2 pruebas end-to-end (e2e)** que cubren los componentes y flujos más importantes de la aplicación de gestión de tareas.
 
+### NOTA
+ me apoye en AI para definir que pruebas unitarias serian las mas relevantes para el proyecto.
+ 
+
 ### ¿Qué son las pruebas unitarias?
 Las **pruebas unitarias** son pruebas que validan el funcionamiento de componentes individuales de forma aislada. Verifican que cada pieza de código funcione correctamente por sí sola.
 

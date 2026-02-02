@@ -7,15 +7,12 @@ using TaskApi.Functions.Models;
 
 namespace TestTaskApi
 {
-    /// <summary>
-    /// Helper methods shared across all UsersFunction tests
-    /// </summary>
-    public partial class UsersFunctionTests
+    public partial class TasksFunctionTests
     {
         protected static Mock<HttpRequestData> CreateMockHttpRequestData(string queryString = "")
         {
             var mockRequest = new Mock<HttpRequestData>(MockBehavior.Strict, new Mock<FunctionContext>().Object);
-            var url = new Uri($"https://localhost:7071/api/users{queryString}");
+            var url = new Uri($"https://localhost:7071/api/tasks{queryString}");
             mockRequest.Setup(r => r.Url).Returns(url);
             mockRequest.Setup(r => r.CreateResponse()).Returns(() =>
             {
@@ -28,6 +25,14 @@ namespace TestTaskApi
                 return response.Object;
             });
 
+            return mockRequest;
+        }
+
+        protected static Mock<HttpRequestData> CreateMockHttpRequestDataWithBody(string json)
+        {
+            var mockRequest = CreateMockHttpRequestData();
+            var stream = new MemoryStream(Encoding.UTF8.GetBytes(json));
+            mockRequest.Setup(r => r.Body).Returns(stream);
             return mockRequest;
         }
 
