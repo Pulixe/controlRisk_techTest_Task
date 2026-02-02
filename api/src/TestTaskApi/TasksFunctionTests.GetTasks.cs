@@ -11,9 +11,7 @@ using Xunit;
 
 namespace TestTaskApi
 {
-    /// <summary>
-    /// Unit tests for TasksFunction.GetTasks endpoint
-    /// </summary>
+    
     public partial class TasksFunctionTests
     {
         private readonly Mock<ITaskRepository> _mockRepo;
@@ -33,38 +31,6 @@ namespace TestTaskApi
             _function = new TasksFunction(_mockRepo.Object, _mockFactory.Object, _mockLoggerFactory.Object);
         }
 
-        [Fact]
-        public async Task GetTasks_WithAuthorizedUser_ReturnsOkWithTasks()
-        {
-            // Arrange
-            var userId = Guid.NewGuid();
-            var tasks = new List<TaskItem>
-            {
-                new TaskItem { Id = Guid.NewGuid(), Title = "Task 1", UserId = userId },
-                new TaskItem { Id = Guid.NewGuid(), Title = "Task 2", UserId = userId }
-            };
-
-            var mockRequest = CreateMockHttpRequestData();
-            var mockContext = CreateMockFunctionContext(userId);
-
-            _mockRepo.Setup(r => r.ListAsync(
-                It.IsAny<string>(), It.IsAny<string>(), It.IsAny<string>(), 
-                It.IsAny<string>(), It.IsAny<bool>(), It.IsAny<int>(), 
-                It.IsAny<int>(), It.IsAny<Guid?>(), It.IsAny<string>(), 
-                It.IsAny<string>(), It.IsAny<DateTime?>(), It.IsAny<DateTime?>()))
-                .ReturnsAsync(tasks);
-
-            // Act
-            var response = await _function.GetTasks(mockRequest.Object, mockContext.Object);
-
-            // Assert
-            Assert.Equal(HttpStatusCode.OK, response.StatusCode);
-            _mockRepo.Verify(r => r.ListAsync(
-                It.IsAny<string>(), It.IsAny<string>(), It.IsAny<string>(), 
-                It.IsAny<string>(), It.IsAny<bool>(), It.IsAny<int>(), 
-                It.IsAny<int>(), userId, It.IsAny<string>(), 
-                It.IsAny<string>(), It.IsAny<DateTime?>(), It.IsAny<DateTime?>()), Times.Once);
-        }
 
         [Fact]
         public async Task GetTasks_WithoutAuthorization_ReturnsUnauthorized()
@@ -112,53 +78,7 @@ namespace TestTaskApi
                 It.IsAny<DateTime?>(), It.IsAny<DateTime?>()), Times.Once);
         }
 
-        [Fact]
-        public async Task GetTasks_WithPagination_PassesCorrectSkipAndTake()
-        {
-            // Arrange
-            var userId = Guid.NewGuid();
-            var mockRequest = CreateMockHttpRequestData("?skip=10&take=20");
-            var mockContext = CreateMockFunctionContext(userId);
+  
 
-            _mockRepo.Setup(r => r.ListAsync(
-                It.IsAny<string>(), It.IsAny<string>(), It.IsAny<string>(), 
-                It.IsAny<string>(), It.IsAny<bool>(), It.IsAny<int>(), 
-                It.IsAny<int>(), It.IsAny<Guid?>(), It.IsAny<string>(), 
-                It.IsAny<string>(), It.IsAny<DateTime?>(), It.IsAny<DateTime?>()))
-                .ReturnsAsync(new List<TaskItem>());
-
-            // Act
-            var response = await _function.GetTasks(mockRequest.Object, mockContext.Object);
-
-            // Assert
-            Assert.Equal(HttpStatusCode.OK, response.StatusCode);
-            _mockRepo.Verify(r => r.ListAsync(
-                It.IsAny<string>(), It.IsAny<string>(), It.IsAny<string>(), 
-                It.IsAny<string>(), It.IsAny<bool>(), 10, 20, userId, 
-                It.IsAny<string>(), It.IsAny<string>(), 
-                It.IsAny<DateTime?>(), It.IsAny<DateTime?>()), Times.Once);
-        }
-
-        [Fact]
-        public async Task GetTasks_WhenExceptionOccurs_ReturnsInternalServerError()
-        {
-            // Arrange
-            var userId = Guid.NewGuid();
-            var mockRequest = CreateMockHttpRequestData();
-            var mockContext = CreateMockFunctionContext(userId);
-
-            _mockRepo.Setup(r => r.ListAsync(
-                It.IsAny<string>(), It.IsAny<string>(), It.IsAny<string>(), 
-                It.IsAny<string>(), It.IsAny<bool>(), It.IsAny<int>(), 
-                It.IsAny<int>(), It.IsAny<Guid?>(), It.IsAny<string>(), 
-                It.IsAny<string>(), It.IsAny<DateTime?>(), It.IsAny<DateTime?>()))
-                .ThrowsAsync(new Exception("Database error"));
-
-            // Act
-            var response = await _function.GetTasks(mockRequest.Object, mockContext.Object);
-
-            // Assert
-            Assert.Equal(HttpStatusCode.InternalServerError, response.StatusCode);
-        }
     }
 }

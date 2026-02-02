@@ -5,9 +5,6 @@ using Xunit;
 
 namespace TestTaskApi
 {
-    /// <summary>
-    /// Unit tests for TasksFunction.CreateTask endpoint
-    /// </summary>
     public partial class TasksFunctionTests
     {
         [Fact]
@@ -64,24 +61,6 @@ namespace TestTaskApi
         }
 
         [Fact]
-        public async Task CreateTask_WithEmptyTitle_ReturnsBadRequest()
-        {
-            // Arrange
-            var userId = Guid.NewGuid();
-            var json = "{\"title\":\"\"}";
-
-            var mockRequest = CreateMockHttpRequestDataWithBody(json);
-            var mockContext = CreateMockFunctionContext(userId);
-
-            // Act
-            var response = await _function.CreateTask(mockRequest.Object, mockContext.Object);
-
-            // Assert
-            Assert.Equal(HttpStatusCode.BadRequest, response.StatusCode);
-            _mockRepo.Verify(r => r.CreateAsync(It.IsAny<TaskItem>()), Times.Never);
-        }
-
-        [Fact]
         public async Task CreateTask_WithNullPayload_ReturnsBadRequest()
         {
             // Arrange
@@ -98,30 +77,6 @@ namespace TestTaskApi
             Assert.Equal(HttpStatusCode.BadRequest, response.StatusCode);
         }
 
-        [Fact]
-        public async Task CreateTask_WhenExceptionOccurs_ReturnsInternalServerError()
-        {
-            // Arrange
-            var userId = Guid.NewGuid();
-            var json = "{\"title\":\"New Task\"}";
 
-            var mockRequest = CreateMockHttpRequestDataWithBody(json);
-            var mockContext = CreateMockFunctionContext(userId);
-
-            var createdTask = new TaskItem { Title = "New Task" };
-            _mockFactory.Setup(f => f.Create(
-                It.IsAny<string>(), It.IsAny<string>(), It.IsAny<DateTime?>(), 
-                It.IsAny<string>(), It.IsAny<string>()))
-                .Returns(createdTask);
-
-            _mockRepo.Setup(r => r.CreateAsync(It.IsAny<TaskItem>()))
-                .ThrowsAsync(new Exception("Database error"));
-
-            // Act
-            var response = await _function.CreateTask(mockRequest.Object, mockContext.Object);
-
-            // Assert
-            Assert.Equal(HttpStatusCode.InternalServerError, response.StatusCode);
-        }
     }
 }

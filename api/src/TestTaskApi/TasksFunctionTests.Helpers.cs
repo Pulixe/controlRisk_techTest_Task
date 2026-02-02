@@ -7,9 +7,6 @@ using TaskApi.Functions.Models;
 
 namespace TestTaskApi
 {
-    /// <summary>
-    /// Helper methods shared across all TasksFunction tests
-    /// </summary>
     public partial class TasksFunctionTests
     {
         protected static Mock<HttpRequestData> CreateMockHttpRequestData(string queryString = "")
